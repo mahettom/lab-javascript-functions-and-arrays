@@ -1,24 +1,86 @@
 // Iteration #1: Find the maximum
-function maxOfTwoNumbers() {}
+function maxOfTwoNumbers(numberOne, numberTwo) {
+  let max;
+
+  if (numberOne === numberTwo){
+    return numberTwo; 
+  }
+
+  else if (numberOne > numberTwo){
+    return numberOne;
+  }
+
+  else { return numberTwo }
+}
+
 
 
 
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-function findLongestWord() {}
+function findLongestWord(ofArray) {
+
+  if (!ofArray.length){
+    return null;
+  }
+
+  let longest = ofArray[0];
+
+  for (let i = 0; i < ofArray.length; i++){
+    if (longest.length < ofArray[i].length){
+      longest = ofArray[i];
+    }
+  }
+  return longest;
+  }
 
 
 
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function sumNumbers() {}
+function sumNumbers(numberArray) {
+
+  if (!numberArray.length){
+    return 0;
+  }
+
+  let result = 0;
+
+  for (let i = 0; i < numberArray.length; i++){
+    result += numberArray[i];
+  }
+  return result;
+
+}
 
 
 
 // Iteration #3.1 Bonus:
-function sum() {}
+function sum(arrayOfAnyType) {
+  let result = 0;
+
+  if (!arrayOfAnyType.length){
+    return 0;
+  }
+  
+  for (let i = 0; i < arrayOfAnyType.length; i++){
+    let currentOne = arrayOfAnyType[i];
+
+    if (typeof(currentOne) === "array" || typeof(currentOne) === "object"){
+      throw Error("Unsupported data type sir or ma'am");
+    }
+
+    
+    if ( typeof(currentOne) === "string" ){
+      result = result + currentOne.length;
+      } else {
+        result = result + currentOne
+      }
+    }
+    return result;
+  }
 
 
 
@@ -26,7 +88,24 @@ function sum() {}
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers() {}
+function averageNumbers(numberAverage) {
+
+  if (!numberAverage.length){
+    return null;
+  }
+
+  let countAverage
+
+  for (let i = 0; i < numberAverage.length; i++){
+    let currentItteration = numberAverage[i];
+
+    if ( Math.sign(currentItteration) === 0 || Math.sign(currentItteration) === 1 ){
+      
+    }
+
+
+  }
+}
 
 
 // Level 2: Array of strings
