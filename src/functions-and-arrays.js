@@ -76,7 +76,7 @@ function sum(arrayOfAnyType) {
     if ( typeof(currentOne) === "string" ){
       result = result + currentOne.length;
       } else {
-        result = result + currentOne
+        result = result + currentOne;
       }
     }
     return result;
@@ -94,24 +94,41 @@ function averageNumbers(numberAverage) {
     return null;
   }
 
-  let countAverage
+  let result = 0;
 
   for (let i = 0; i < numberAverage.length; i++){
-    let currentItteration = numberAverage[i];
+    
+    if (numberAverage[i] < 0){
+      result -= Math.abs(numberAverage[i])
+      }
 
-    if ( Math.sign(currentItteration) === 0 || Math.sign(currentItteration) === 1 ){
-      
+    else {
+      result += numberAverage[i];
     }
-
-
   }
+  result / numberAverage.length;
+  return result;
 }
 
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength() { }
+function averageWordLength(arrayWords) {
+  let count = 0;
+
+  if (!arrayWords.length){
+    return null;
+  }
+  
+  for (let i = 0; i < arrayWords.length; i++){
+
+      count += arrayWords[i].length;
+    }
+    
+    return count / arrayWords.length;
+  }
+
 
 // Bonus - Iteration #4.1
 function avg() {}
@@ -131,14 +148,50 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(arrayToUniqified) {
+
+  if (!arrayToUniqified.length){
+    return null;
+  }
+
+  let resultArray = [];
+
+for(let i = 0; i < arrayToUniqified.length; i++){
+  let thisWord = arrayToUniqified[i];
+
+  if (!resultArray.includes(thisWord)){
+    resultArray.push(thisWord);
+  }
+}
+return resultArray;
+}
 
 
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
+function doesWordExist(wordsArray, wordToFind) {
+
+  if (!wordsArray.length){
+    return null
+  }
+
+  let resultFind;
+
+  for(let i = 0; i < wordsArray.length; i++){
+    
+    
+    if (wordsArray[i] === wordToFind){
+      return true;
+
+    }
+    else if (wordsArray[i] !== wordToFind){
+      resultFind = false;
+    }
+  }
+  return resultFind;
+}
 
 
 
@@ -157,7 +210,27 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+function howManyTimes(repetitiveArray, wordsToCount) {
+
+  if (!repetitiveArray.length){
+    return 0;
+  }
+
+  else if (!repetitiveArray.includes(wordsToCount)){
+    return 0;
+  }
+
+  let multiple;
+
+  repetitiveArray.forEach((word) => { 
+    if (word === wordsToCount){
+      multiple + 1;
+    }
+  })
+
+  console.log(multiple); // => That give me undifined 
+  return multiple;
+}
 
 
 
